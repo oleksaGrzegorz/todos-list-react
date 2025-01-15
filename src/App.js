@@ -15,6 +15,13 @@ function App() {
     { id: 3, content: "zad3", done: false }
   ]);
 
+  const markAllDone = () => {
+    setTasks(tasks => tasks.map(task => ({
+      ...task,
+      done: true
+    })));
+  };
+
   const toggleTaskDone = (id) => {
     setTasks(tasks => tasks.map(task => {
       if (task.id === id) {
@@ -50,6 +57,7 @@ function App() {
             tasks={tasks}
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
+            markAllDone={markAllDone}
           />
         }
       />
