@@ -15,6 +15,15 @@ function App() {
     { id: 3, content: "zad3", done: false }
   ]);
 
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, done: !task.done };
+      }
+      return task;
+    }));
+  };
+
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
@@ -34,6 +43,7 @@ function App() {
             tasks={tasks} 
             hideDone={hideDone}
             removeTask={removeTask} 
+            toggleTaskDone={toggleTaskDone}
           />}
         extraHeaderContent={
           <Buttons
