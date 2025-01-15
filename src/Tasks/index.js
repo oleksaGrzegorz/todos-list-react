@@ -5,7 +5,7 @@ const Tasks = (props) => (
     {props.tasks.map((task) => (
       <li
         className={`list__item ${
-          task.done && props.hideDoneTasks ? "tasksItemHidden" : ""
+          task.done && props.hideDone ? "tasksItemHidden" : ""
         }`}
       >
         <button className={`doneButton${task.done ? " doneButton--done" : ""}`}>
@@ -17,7 +17,8 @@ const Tasks = (props) => (
         >
           {task.content}
         </span>
-        <button className="removeButton">🗑</button>
+        <button
+        className="removeButton">🗑</button>
       </li>
     ))}
   </ul>
