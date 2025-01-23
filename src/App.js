@@ -6,14 +6,25 @@ import Buttons from "./Buttons";
 import Header from "./Header";
 import Container from "./Container";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "zad1", done: true },
-    { id: 2, content: "zad2", done: false },
-    { id: 3, content: "zad3", done: false },
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const savedTasksInLocalStorage = localStorage.getItem("tasks");
+    if (savedTasksInLocalStorage) {
+      setTasks(JSON.parse(savedTasksInLocalStorage));
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (tasks.length > 0) {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+  }, [tasks]);
+
 
   const addNewTask = (content) => {
     setTasks((tasks) => [
