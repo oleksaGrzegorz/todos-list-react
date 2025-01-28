@@ -29,3 +29,34 @@ export const Content = styled.span`
       text-decoration: line-through;
     `}
 `;
+
+export const Button = styled.button`
+  border: none;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: white;
+
+  ${({ done }) =>
+    done &&
+    css`
+      background-color: hsl(120, 100%, 30%);
+      &:hover {
+        background-color: hsl(120, 100%, 26%);
+      }
+    `}
+
+  ${({ remove }) =>
+    remove &&
+    css`
+      background-color: hsl(0, 100%, 60%);
+      &:hover {
+        background-color: hsl(0, 100%, 70%);
+      }
+    `}
+`;
