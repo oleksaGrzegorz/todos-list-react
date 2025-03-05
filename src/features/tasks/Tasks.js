@@ -1,6 +1,6 @@
 import Form from "./Form";
 import Section from "../../common/Section";
-import Tasks from "./TaskList";
+import TaskList from "./TaskList";
 import Buttons from "./Buttons";
 import Header from "../../common/Header";
 import Container from "../../common/Container";
@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import useTasks from "../../useTasks";
 
-function TheTasks() {
+function Tasks() {
   const [hideDone, setHideDone] = useState(false);
 
   const { tasks, addNewTask, markAllDone, toggleTaskDone, removeTask } =
@@ -34,7 +34,7 @@ function TheTasks() {
       <Section
         title="Lista zadań"
         body={
-          <Tasks
+          <TaskList
             tasks={tasks}
             hideDone={hideDone}
             removeTask={removeTask}
@@ -54,4 +54,4 @@ function TheTasks() {
   );
 }
 
-export default TheTasks;
+export default Tasks;
