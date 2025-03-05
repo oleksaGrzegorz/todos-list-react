@@ -1,14 +1,14 @@
 import Form from "./Form";
-import Section from "./Section";
-import Tasks from "./Tasks";
+import Section from "../../common/Section";
+import Tasks from "./TaskList";
 import Buttons from "./Buttons";
-import Header from "./Header";
-import Container from "./Container";
+import Header from "../../common/Header";
+import Container from "../../common/Container";
 import { useState } from "react";
 import { useEffect } from "react";
-import useTasks from "./useTasks";
+import useTasks from "../../useTasks";
 
-function App() {
+function TheTasks() {
   const [hideDone, setHideDone] = useState(false);
 
   const { tasks, addNewTask, markAllDone, toggleTaskDone, removeTask } =
@@ -54,4 +54,4 @@ function App() {
   );
 }
 
-export default App;
+export default TheTasks;
