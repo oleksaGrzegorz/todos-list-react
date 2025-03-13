@@ -21,8 +21,3 @@ export const StyledForm = styled.form`
     flex-direction: column;
   }
 `;
-
-export const Input = styled.input`
-  flex: 1;
-  padding: 10px;
-`;
