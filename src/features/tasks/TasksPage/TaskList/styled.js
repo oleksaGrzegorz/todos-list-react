@@ -13,8 +13,8 @@ export const Item = styled.li`
   padding: 10px;
   border-bottom: 2px solid hsl(0, 6%, 87%);
 
-  ${({ hidden }) =>
-    hidden &&
+  ${({ $hidden }) =>
+    $hidden &&
     css`
       display: none;
     `}
@@ -23,8 +23,8 @@ export const Item = styled.li`
 export const Content = styled.span`
   flex-grow: 1;
 
-  ${({ done }) =>
-    done &&
+  ${({ $done }) =>
+    $done &&
     css`
       text-decoration: line-through;
     `}
@@ -41,9 +41,10 @@ export const Button = styled.button`
   align-items: center;
   flex-shrink: 0;
   color: white;
+  background-color: hsl(120, 100%, 30%);
 
-  ${({ done }) =>
-    done &&
+  ${({ $done }) =>
+    $done &&
     css`
       background-color: hsl(120, 100%, 30%);
       &:hover {
@@ -51,8 +52,8 @@ export const Button = styled.button`
       }
     `}
 
-  ${({ remove }) =>
-    remove &&
+  ${({ $remove }) =>
+    $remove &&
     css`
       background-color: hsl(0, 100%, 60%);
       &:hover {
@@ -60,3 +61,4 @@ export const Button = styled.button`
       }
     `}
 `;
+

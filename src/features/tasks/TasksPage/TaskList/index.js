@@ -13,19 +13,20 @@ const TaskList = () => {
   const query = new URLSearchParams(location.search).get("szukaj");
 
   const tasks = useSelector((state) => selectTaskByQuery(state, query));
-  const {hideDone} = useSelector(selectTasks);
+  const { hideDone } = useSelector(selectTasks);
   const dispatch = useDispatch();
+
   return (
     <List>
       {tasks.map((task) => (
-        <Item hidden={task.done && hideDone} key={task.id}>
-          <Button done onClick={() => dispatch(toggleTaskDone(task.id))}>
+        <Item $hidden={task.done && hideDone} key={task.id}>
+          <Button $done={task.done} onClick={() => dispatch(toggleTaskDone(task.id))}>
             {task.done ? "✓" : ""}
           </Button>
-          <Content done={task.done}>
+          <Content $done={task.done}>
             <Link to={`/zadania/${task.id}`}>{task.content}</Link>
           </Content>
-          <Button remove onClick={() => dispatch(removeTask(task.id))}>
+          <Button $remove onClick={() => dispatch(removeTask(task.id))}>
             🗑
           </Button>
         </Item>
