@@ -3,12 +3,8 @@ import styled from "styled-components";
 
 const activeClassName = "active";
 
-const StyledNavLink = styled(NavLink).attrs(() => ({
-  activeClassName,
-}))`
+const StyledNavLink = styled(NavLink).attrs(() => ({activeClassName,}))`
   &.${activeClassName} {
-    color: red;
-  }
-`;
+    color: red}`;
 
 export default StyledNavLink;

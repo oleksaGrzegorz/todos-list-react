@@ -26,6 +26,8 @@ const tasksSlice = createSlice({
         task.done = true;
       });
     },
+    fetchExampleTasks: () => {},
+    setTasks: (state, {payload: tasks}) => {state.tasks=tasks;}
   },
 });
 
@@ -35,6 +37,8 @@ export const {
   toggleTaskDone,
   removeTask,
   markAllDone,
+  fetchExampleTasks,
+  setTasks,
 } = tasksSlice.actions;
 export const selectTasks = (state) => state.tasks;
 
@@ -46,7 +50,9 @@ export const selectTaskByQuery = (state, query) => {
   if (!query || query.trim() === "") {
     return tasks;
   }
-  return tasks.filter(({ content }) => content.toUpperCase().includes(query.trim().toUpperCase()));
+  return tasks.filter(({ content }) =>
+    content.toUpperCase().includes(query.trim().toUpperCase())
+  );
 };
 
 export default tasksSlice.reducer;
