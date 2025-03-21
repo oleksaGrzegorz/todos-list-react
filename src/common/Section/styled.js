@@ -6,6 +6,7 @@ export const StyledSection = styled.section`
   padding-bottom: 10px;
   border: 2px solid hsl(0, 6%, 87%);
   word-break: break-word;
+  padding: 10px;
 `;
 
 export const Title = styled.div`
