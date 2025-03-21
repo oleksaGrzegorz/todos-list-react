@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Content, Button } from "./styled";
 import {
-  selectTasks,
   toggleTaskDone,
   removeTask,
   selectTaskByQuery,
@@ -13,7 +12,7 @@ const TaskList = () => {
   const query = new URLSearchParams(location.search).get("szukaj");
 
   const tasks = useSelector((state) => selectTaskByQuery(state, query));
-  const { hideDone } = useSelector(selectTasks);
+  const hideDone = useSelector(state => state.tasks.hideDone);
   const dispatch = useDispatch();
 
   return (
