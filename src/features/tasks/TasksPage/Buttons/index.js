@@ -3,8 +3,10 @@ import { ButtonsSection, Button } from "./styled";
 import { selectTasks, toggleHideDone, markAllDone } from "../../tasksSlice";
 
 const Buttons = () => {
-  const { tasks, hideDone } = useSelector(selectTasks);
+  const tasks = useSelector(selectTasks);
+  const hideDone = useSelector(state => state.tasks.hideDone);
   const dispatch = useDispatch();
+
   return (
     tasks.length > 0 && (
       <ButtonsSection>
