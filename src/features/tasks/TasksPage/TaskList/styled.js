@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const List = styled.ul`
   padding: 10px;
@@ -28,6 +29,21 @@ export const Content = styled.span`
     css`
       text-decoration: line-through;
     `}
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #206f63;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #179d8e;
+  }
 `;
 
 export const Button = styled.button`
@@ -61,4 +77,3 @@ export const Button = styled.button`
       }
     `}
 `;
-
